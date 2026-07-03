@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#141310">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Sorted</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <svg class="ducks" viewBox="0 0 134 66" aria-hidden="true">
+      <defs>
+        <g id="duckwalk">
+          <ellipse cx="18" cy="27" rx="15" ry="10"/>
+          <path d="M4 23 L-2 14 L11 19 Z"/>
+          <circle cx="29" cy="13" r="7.5"/>
+          <path d="M35.5 11 L44 13.5 L35.5 16 Z"/>
+          <path d="M20 35 L22.6 35 L22 45.5 L19.4 45.5 Z"/>
+          <path d="M19 47 L31 47 L24 42 Z"/>
+          <path d="M12 34.5 L14.5 35 L10.5 44 L8.3 42.8 Z"/>
+          <path d="M4.5 45.5 L15 41 L8 39.2 Z"/>
+        </g>
+      </defs>
+      <use href="#duckwalk" fill="#FFD43B"/>
+      <use href="#duckwalk" fill="#FFD43B" transform="translate(52,4)"/>
+      <use href="#duckwalk" fill="#FFD43B" transform="translate(106,28) scale(0.55)"/>
+    </svg>
+    <div class="eyebrow" id="eyebrow">Sorted</div>
+    <h1 id="greeting">Sorted</h1>
+    <p id="header-sub"></p>
+    <div class="sync-pill" id="sync-pill" title="Sync status">●</div>
+  </div>
+</header>
+
+<nav aria-label="Pages">
+  <div class="nav-inner" id="nav-inner">
+    <button class="tab-btn active" data-page="today"><span class="tab-emoji">☀️</span>Today</button>
+    <button class="tab-btn" data-page="week"><span class="tab-emoji">🗓️</span>Week</button>
+    <button class="tab-btn" data-page="shopping"><span class="tab-emoji">🛒</span>Shopping</button>
+    <button class="tab-btn" data-page="recipes"><span class="tab-emoji">📖</span>Recipes</button>
+    <button class="tab-btn" data-page="household"><span class="tab-emoji">🏠</span>Household</button>
+    <button class="tab-btn" data-page="baby"><span class="tab-emoji">👶</span>Baby</button>
+    <button class="tab-btn" data-page="review"><span class="tab-emoji">📝</span>Review</button>
+  </div>
+</nav>
+
+<main>
+  <section class="page active" id="page-today">
+    <form id="quick-form" class="add-form">
+      <input type="text" id="quick-name" placeholder="On your mind? Park it here" maxlength="120" required>
+      <select id="quick-kind"><option value="task">To-do</option><option value="shop">Shopping</option></select>
+      <button type="submit" class="pill-btn">Add</button>
+    </form>
+    <div id="today-root"></div>
+  </section>
+
+  <section class="page" id="page-week">
+    <h2>This week</h2>
+    <div id="week-root"></div>
+    <div class="section-kicker">Month ahead</div>
+    <p class="page-intro" id="month-intro"></p>
+    <div id="month-root"></div>
+  </section>
+
+  <section class="page" id="page-shopping">
+    <h2>Shopping list</h2>
+    <p class="page-intro">Ticks are shared, so whoever is in the shop sees what the other has grabbed. Add anything that is missing; it stays on the list until it is bought.</p>
+    <div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" id="shop-progress"></div></div><span class="progress-label" id="shop-progress-label"></span></div>
+    <form id="add-shop-form" class="add-form">
+      <input type="text" id="add-shop-name" placeholder="Add to this week's list, e.g. butter" maxlength="80" required>
+      <button type="submit" class="pill-btn">Add</button>
+    </form>
+    <div class="shop-tools">
+      <button class="filter-btn" id="hide-done-btn">Hide ticked items</button>
+      <button class="filter-btn" id="reset-shop-btn">Reset ticks</button>
+    </div>
+    <div id="shop-root"></div>
+  </section>
+
+  <section class="page" id="page-recipes">
+    <h2>Recipes and kitchen plan</h2>
+    <p class="page-intro" id="recipes-intro"></p>
+    <div class="section-kicker">This week in the kitchen</div>
+    <p class="page-intro">One Sunday session covers most childminder lunches; evenings are mostly defrosting and packing.</p>
+    <div id="prep-root"></div>
+    <div class="section-kicker">Recipes</div>
+    <div class="filter-row" id="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+      <button class="filter-btn" data-filter="lunch">Lunch</button>
+      <button class="filter-btn" data-filter="dinner">Dinner</button>
+      <button class="filter-btn" data-filter="family">Family</button>
+      <button class="filter-btn" data-filter="adults">Adults</button>
+    </div>
+    <div id="recipe-root"></div>
+  </section>
+
+  <section class="page" id="page-household">
+    <h2>Household</h2>
+    <p class="page-intro">The to-do list, what is in the freezer and cupboard, and the running list for the next shop.</p>
+    <div id="household-root"></div>
+  </section>
+
+  <section class="page" id="page-baby"><h2 id="baby-heading">Alfie</h2><div id="baby-root"></div></section>
+
+  <section class="page" id="page-review">
+    <h2>Sunday review</h2>
+    <p class="page-intro">Five minutes on a Sunday: set next week's logistics and say how the week went. Next week's plan is built from these answers.</p>
+    <div id="review-root"></div>
+  </section>
+</main>
+
+<footer>
+  <p id="footer-text">Always check temperatures before serving and supervise all meals. Reheated food must be piping hot throughout, then cooled to warm.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.j

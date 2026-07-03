@@ -1,0 +1,39 @@
+{
+    "note": "Rolling purchase history, the engine for habit learning and reorder prediction. Claude appends one entry per shop. cat: ingredient | snack | household. consumable:true marks steady-use items worth predicting (wipes, foil, formula, etc.). Prediction needs about 2 to 3 buys of the same item before a due date is estimated.",
+    "log": [
+          {
+                  "date": "2026-06-21",
+                  "store": "Supermarket",
+                  "total": 84.60,
+                  "items": [
+                            {"name": "Bananas", "qty": "1kg", "price": 1.55, "cat": "ingredient"},
+                            {"name": "Butternut squash", "qty": "1", "price": 1.49, "cat": "ingredient"},
+                            {"name": "Sweet potatoes", "qty": "1kg", "price": 1.79, "cat": "ingredient"},
+                            {"name": "Clementines", "qty": "1 punnet", "price": 2.49, "cat": "ingredient"},
+                            {"name": "Strawberries", "qty": "400g", "price": 3.99, "cat": "ingredient"},
+                            {"name": "Blueberries", "qty": "150g", "price": 1.99, "cat": "ingredient"},
+                            {"name": "Avocados", "qty": "2", "price": 1.99, "cat": "ingredient"},
+                            {"name": "Cucumber", "qty": "1", "price": 0.89, "cat": "ingredient"},
+                            {"name": "Carrots", "qty": "1kg", "price": 0.95, "cat": "ingredient"},
+                            {"name": "Salmon fillets", "qty": "4", "price": 8.99, "cat": "ingredient"},
+                            {"name": "Chicken thigh fillets", "qty": "1 pack", "price": 5.99, "cat": "ingredient"},
+                            {"name": "Beef mince 5%", "qty": "1 pack", "price": 4.59, "cat": "ingredient"},
+                            {"name": "Whole milk", "qty": "2L", "price": 2.29, "cat": "ingredient", "consumable": true},
+                            {"name": "Full fat Greek yoghurt", "qty": "1", "price": 2.49, "cat": "ingredient"},
+                            {"name": "Cheddar", "qty": "1 block", "price": 2.39, "cat": "ingredient"},
+                            {"name": "Unsalted butter", "qty": "1", "price": 1.99, "cat": "ingredient", "consumable": true},
+                            {"name": "Eggs", "qty": "12", "price": 3.85, "cat": "ingredient", "consumable": true},
+                            {"name": "Tinned tuna", "qty": "3", "price": 2.67, "cat": "ingredient"},
+                            {"name": "Tinned chickpeas", "qty": "2", "price": 1.30, "cat": "ingredient"},
+                            {"name": "Small pasta shapes", "qty": "1 pack", "price": 1.19, "cat": "ingredient"},
+                            {"name": "Breadsticks", "qty": "1 pack", "price": 0.85, "cat": "ingredient"},
+                            {"name": "Dark chocolate", "qty": "1 bar", "price": 2.50, "cat": "snack"},
+                            {"name": "Popcorn", "qty": "2 bags", "price": 2.98, "cat": "snack"},
+                            {"name": "Follow-on formula", "qty": "2", "price": 16.58, "cat": "household", "consumable": true},
+                            {"name": "Baby wipes", "qty": "5 packs", "price": 4.45, "cat": "household", "consumable": true},
+                            {"name": "Nappies size 5", "qty": "1 box", "price": 8.99, "cat": "household", "consumable": true},
+                            {"name": "Cling film", "qty": "1", "price": 1.39, "cat": "household", "consumable": true}
+                  ]
+          }
+    ]
+}
